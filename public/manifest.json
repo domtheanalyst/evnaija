@@ -1,0 +1,24 @@
+{
+  "name": "NaijaEV — Charging, Parking & Rescue",
+  "short_name": "NaijaEV",
+  "description": "Find EV charging stations, book parking, order car utilities and request emergency rescue across Nigeria.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#059669",
+  "categories": ["travel", "utilities", "navigation"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Find charging", "url": "/stations" },
+    { "name": "Book parking", "url": "/parking" },
+    { "name": "Emergency rescue", "url": "/emergency" }
+  ]
+}

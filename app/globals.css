@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink-50 text-ink-900 antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Keep content clear of the fixed bottom navigation. */
+.app-shell {
+  @apply mx-auto min-h-screen w-full max-w-lg bg-ink-50 pb-24;
+}
+
+/* Leaflet needs an explicit height and sits above the page background. */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #e5e7eb;
+  font-family: var(--font-sans);
+  z-index: 0;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px;
+}
+
+/* Custom map markers */
+.marker-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px 9999px 9999px 4px;
+  transform: rotate(-45deg);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.35);
+}
+
+.marker-pin > span {
+  transform: rotate(45deg);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.marker-pin--station {
+  background: #059669;
+}
+
+.marker-pin--parking {
+  background: #2563eb;
+}
+
+.marker-pin--user {
+  background: #0f172a;
+}
+
+.marker-pin--emergency {
+  background: #dc2626;
+}
+
+/* Hide scrollbars on horizontal chip rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Range input styling */
+input[type="range"] {
+  @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-ink-200;
+}
+input[type="range"]::-webkit-slider-thumb {
+  @apply h-5 w-5 appearance-none rounded-full border-2 border-white bg-brand-600 shadow;
+}
