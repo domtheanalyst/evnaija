@@ -65,10 +65,14 @@ export default function BookingDetailPage() {
   const canStart = booking.status === "confirmed";
   const canComplete = booking.status === "active";
 
-  const act = async (fn: () => Promise<Booking>, message: string) => {
+  const act = async (fn: () => Promise<Booking | null>, message: string) => {
     setBusy(true);
     try {
       const updated = await fn();
+      if (!updated) {
+        toast("Booking not found. Please try again.", "error");
+        return;
+      }
       setBooking(updated);
       toast(message, "success");
     } catch {

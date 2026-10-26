@@ -8,7 +8,6 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Textarea } from "@/components/ui/Input";
-import { EmptyState } from "@/components/ui/EmptyState";
 import { PaymentSheet } from "@/components/checkout/PaymentSheet";
 import { useToast } from "@/components/ui/Toast";
 import { useAuthStore } from "@/lib/store/authStore";
@@ -16,7 +15,6 @@ import { useLocationStore } from "@/lib/store/locationStore";
 import { EMERGENCY_TYPES } from "@/lib/data/responders";
 import { createEmergencyRequest, listEmergencyRequests, EMERGENCY_STATUS_LABELS } from "@/lib/services/emergency";
 import { formatNaira } from "@/lib/utils/currency";
-import { formatRelative } from "@/lib/utils/time";
 import { cn } from "@/lib/utils/misc";
 import type { EmergencyRequest, EmergencyType } from "@/lib/types";
 
